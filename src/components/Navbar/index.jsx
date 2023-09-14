@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Container } from './style'
-import Body from '../Body'
+import { MovieContext } from "../../Context";
 
 function Navbar() {
+  const {movie} = useContext(MovieContext)
   return (
     <Container>
       <Container.Logo>Kino Context Api</Container.Logo>
@@ -10,7 +11,7 @@ function Navbar() {
         <Container.NavItem>Home</Container.NavItem>
         <Container.NavItem>New Movies</Container.NavItem>
         <Container.NavItem>Genre</Container.NavItem>
-        <Container.NavItem>0</Container.NavItem>
+        <Container.NavItem>{movie.length}</Container.NavItem>
       </Container.Nav>
     </Container>
   )

@@ -8,6 +8,9 @@ const Container = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
+  @media (max-width: 768px) {
+    padding: 10px 0;
+  }
 `;
 
 Container.Card = styled.div`

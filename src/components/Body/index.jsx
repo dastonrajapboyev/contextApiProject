@@ -1,18 +1,18 @@
-import React, { useState } from "react";
+import React, {  useContext } from "react";
 import { Container } from "./style";
-import { database } from "../../mock";
+import { MovieContext } from "../../Context";
 
 function Body() {
-  const [data, setData] = useState(database);
+  const {movie, setMovie} = useContext(MovieContext)
 
   const onDelete = (id) => {
-    const updatedUsers = data.filter((val) => val.id !== id);
-    setData(updatedUsers);
+    const updatedUsers = movie.filter((val) => val.id !== id);
+    setMovie(updatedUsers);
   };
 
   return (
     <Container>
-      {data.map((value) => {
+      {movie.map((value) => {
         return (
           <Container.Card key={value.id}>
             <Container.CardImg src={value.url} />
